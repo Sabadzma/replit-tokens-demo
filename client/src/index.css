@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core tokens converted to CSS variables */
+  --color-red-10: #FFF5F5;
+  --color-red-20: #FEE2E2;
+  --color-red-30: #FECACA;
+  --color-red-40: #FCA5A5;
+  --color-red-50: #F87171;
+  --color-red-60: #EF4444;
+  --color-red-70: #DC2626;
+  --color-red-80: #B91C1C;
+  --color-red-90: #991B1B;
+  --color-red-100: #7F1D1D;
+
+  --color-green-10: #ECFDF5;
+  --color-green-20: #D1FAE5;
+  --color-green-30: #A7F3D0;
+  --color-green-40: #6EE7B7;
+  --color-green-50: #34D399;
+  --color-green-60: #10B981;
+  --color-green-70: #059669;
+  --color-green-80: #047857;
+  --color-green-90: #065F46;
+  --color-green-100: #064E3B;
+
+  --color-yellow-10: #FFFBEB;
+  --color-yellow-20: #FEF3C7;
+  --color-yellow-30: #FDE68A;
+  --color-yellow-40: #FCD34D;
+  --color-yellow-50: #FBBF24;
+  --color-yellow-60: #F59E0B;
+  --color-yellow-70: #D97706;
+  --color-yellow-80: #B45309;
+  --color-yellow-90: #92400E;
+  --color-yellow-100: #78350F;
+
+  --color-burgundy-10: #FFF1F2;
+  --color-burgundy-20: #FFE4E6;
+  --color-burgundy-30: #FECDD3;
+  --color-burgundy-40: #FDA4AF;
+  --color-burgundy-50: #FB7185;
+  --color-burgundy-60: #E11D48;
+  --color-burgundy-70: #BE123C;
+  --color-burgundy-80: #9F1239;
+  --color-burgundy-90: #881337;
+  --color-burgundy-100: #701A29;
+
+  --color-blue-10: #EFF6FF;
+  --color-blue-20: #DBEAFE;
+  --color-blue-30: #BFDBFE;
+  --color-blue-40: #93C5FD;
+  --color-blue-50: #60A5FA;
+  --color-blue-60: #3B82F6;
+  --color-blue-70: #2563EB;
+  --color-blue-80: #1D4ED8;
+  --color-blue-90: #1E40AF;
+  --color-blue-100: #1E3A8A;
+
+  --color-indigo-10: #EEF2FF;
+  --color-indigo-20: #E0E7FF;
+  --color-indigo-30: #C7D2FE;
+  --color-indigo-40: #A5B4FC;
+  --color-indigo-50: #818CF8;
+  --color-indigo-60: #6366F1;
+  --color-indigo-70: #4F46E5;
+  --color-indigo-80: #4338CA;
+  --color-indigo-90: #3730A3;
+  --color-indigo-100: #312E81;
+
+  --color-neutral-10: #F8FAFC;
+  --color-neutral-20: #F1F5F9;
+  --color-neutral-30: #E2E8F0;
+  --color-neutral-40: #CBD5E1;
+  --color-neutral-50: #94A3B8;
+  --color-neutral-60: #64748B;
+  --color-neutral-70: #475569;
+  --color-neutral-80: #334155;
+  --color-neutral-90: #1E293B;
+  --color-neutral-100: #0F172A;
+
+  /* Semantic tokens */
+  --text-strong: var(--color-neutral-90);
+  --text-soft: var(--color-neutral-60);
+  --text-accent: var(--color-blue-70);
+  --text-light: var(--color-neutral-10);
+  --text-positive: var(--color-green-60);
+  --text-negative: var(--color-red-60);
+  
+  --bg-accent: var(--color-blue-70);
+  --bg-subtle: var(--color-blue-20);
+  --bg-neutral: var(--color-neutral-10);
+  --bg-neutral-elevated: var(--color-neutral-20);
+  --bg-positive: var(--color-green-50);
+  --bg-negative: var(--color-red-50);
+
+  /* Project-specific variables */
+  --chart-bar-color: var(--bg-accent);
+  --progress-marker-color: var(--text-accent);
+  --card-border-radius: 0.75rem;
+  --animation-duration: 2s;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: var(--bg-accent);
+    color: var(--text-light);
+  }
+}
+
+/* Chart bar animation */
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.chart-bar {
+  animation: pulse var(--animation-duration) infinite;
+  background-color: var(--chart-bar-color);
+}
